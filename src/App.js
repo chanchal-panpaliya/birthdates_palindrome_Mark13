@@ -1,13 +1,12 @@
 import './App.css';
 import { Component } from 'react';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+
 import moment from 'moment';
 
-import  Facebook  from '@material-ui/icons/Facebook';
-import  Twitter  from '@material-ui/icons/Twitter';
-import  LinkedIn  from '@material-ui/icons/LinkedIn';
-import  GitHub  from '@material-ui/icons/GitHub';
+import FacebookIcon from './img/icons/facebook.png';
+import TwitterIcon from './img/icons/twitter.png';
+import LinkedInIcon from './img/icons/linkedin.png';
+import GithubIcon from './img/icons/github.png'; 
  
 
 class App extends Component {
@@ -178,21 +177,17 @@ ConvertDateToString = (date) =>{
     return (
       <div className="App">
         <div className="palindrome-heading"> Is your Birthday Palindrome? 🤔</div>
-        <form  noValidate>
+   
           <div className="palindrome-DOBtext"> 
-            <TextField id="date" label="Birthday" value={this.state.DOB} type="date" onChange={this.onhandle_getBirthdate}
-              InputLabelProps={{
-                shrink: true,
-              }}
-            />
+            <input id="date" name="Birthday" value={this.state.DOB} type="date" onChange={this.onhandle_getBirthdate} style={{width:'20%',height:'5vh'}}/>
           </div>
 
           <div className="palindrome-Button">
             {this.state.DOB? 
-            <Button variant="contained" style={{background:'rgba(218,112,214, 1)',color:'white'}} onClick={this.getNextPalindromeDate}>Check Palindrome Number</Button>:
-             <span style={{cursor:'no-drop'}}>
-             <Button variant="outlined" color="primary" disabled>Check Palindrome Number</Button>
-             </span>}
+            <button style={{width:'20%',height:'5vh',background:'rgba(218,112,214, 1)',color:'white'}} onClick={this.getNextPalindromeDate}>Check Palindrome Number</button>:
+           
+             <button style={{color:'black',width:'20%',height:'5vh',cursor:'no-drop'}} disabled>Check Palindrome Number</button>
+            }
           </div>
 
           {this.state.flag ? <div> Your DOB is Palindrome </div> : <div>  </div>} 
@@ -203,7 +198,7 @@ ConvertDateToString = (date) =>{
             </div> 
             : 
             null}
-       </form>
+       
       </div>
     );
   }
@@ -219,22 +214,22 @@ render(){
           <div className="menu__socialItems">
                   <a className="menu__socialLink" target="_blank" href='https://www.facebook.com/chanchal.panpaliya'> 
                     <span className="menu__socialIcon">
-                      <Facebook  style={{color:'grey'}}/>
+                      <img style={{width:'8%',paddingTop:'2%'}} src={FacebookIcon} alt="facebooklink"/>
                     </span>
                   </a> <br/><br/>
                   <a className="menu__socialLink" target="_blank" href='https://twitter.com/CPanpaliya'> 
                      <span className="menu__socialIcon">
-                        <Twitter style={{color:'grey'}}/>
+                        <img style={{width:'8%',paddingTop:'2%'}} src={TwitterIcon} alt="twitterlink"/>
                      </span>
                   </a><br/><br/>
                   <a className="menu__socialLink" target="_blank" href='https://www.linkedin.com/in/chanchal-panpaliya-0b0436112'> 
                     <span className="menu__socialIcon">
-                      <LinkedIn style={{color:'grey'}}/> 
+                       <img style={{width:'8%',paddingTop:'2%'}} src={LinkedInIcon} alt="linkedinlink"/>
                       </span>
                   </a> <br/><br/>
                   <a className="menu__socialLink" target="_blank" href='https://github.com/chanchal-panpaliya'> 
                     <span className="menu__socialIcon">
-                      <GitHub style={{color:'grey'}}/>
+                      <img style={{width:'8%',paddingTop:'2%'}} src={GithubIcon} alt="githublink"/>
                     </span>
                 </a>
               </div>
